@@ -22,8 +22,12 @@ Successfully created firewall rules and verified that Nmap reports port 80 as **
 
 commands.txt
 iptables --version
+
 sudo iptables -L -n -v
+
 sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+
 sudo iptables -A INPUT -p tcp --dport 80 -j DROP
 nmap -p 80 <Target-IP>
+
 sudo iptables -D INPUT -p tcp --dport 80 -j DROP
